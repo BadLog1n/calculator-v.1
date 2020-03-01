@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-namespace первая_задача_лол
+namespace КАЛЬКУЛЯТОР
 {
 
     class Program
@@ -21,6 +21,8 @@ namespace первая_задача_лол
             Console.WriteLine("3 - вычитание");
             Console.WriteLine("4 - деление");
             Console.WriteLine();
+
+
             int deistvie = Convert.ToInt32(Console.ReadLine());
             switch (deistvie)
             {
@@ -30,8 +32,11 @@ namespace первая_задача_лол
                 case 2:
                     Ymnozgenie(c1, c2);
                     break;
+                case 3:
+                    Vychitanie(c1, c2);
+                    break;
                 default:
-                    Console.WriteLine("Default case");
+                    Console.WriteLine("Вы выбрали неправильное действие");
                     break;
             }
 
@@ -146,8 +151,16 @@ namespace первая_задача_лол
 
 
 
+            
+            for (int i = 0; i < 7; i++)
+            {
+                Console.WriteLine();
+            }
+            Console.WriteLine("Калькулятор V1. Над калькулятором работали:");
+            Console.WriteLine("Степан Немченко (https://github.com/BadLog1n/)");
+            Console.WriteLine("Cофья Сохина (https://github.com/sssofi0101/)");
+            Console.WriteLine("На данный момент в калькуляторе доступны не все функции, но мы работаем над этим ;)");
             Console.ReadKey();
-
 
         }
         static void Ymnozgenie(int c1, int c2)
@@ -289,10 +302,6 @@ namespace первая_задача_лол
 
                 }
                 sum = elementstr.Length;
-                if (sum1 == sum)
-                {
-                    elementstr = elementstr.Remove(0, 1);
-                }
                 ch--;
                 sum1 = sum;
                 if ((a == 1) || (b == 1))
@@ -302,8 +311,8 @@ namespace первая_задача_лол
                 else
                 {
                     while (CountC6 > elementstr.Length)
-                    { 
-                    elementstr = probel + elementstr;
+                    {
+                        elementstr = probel + elementstr;
                         CountC6--;
                     }
                     Console.WriteLine(elementstr);
@@ -312,7 +321,7 @@ namespace первая_задача_лол
                 s1 = elementstr;
             }
 
-            
+
 
             for (int i = 0; i < c1str.Length; i++)
             {
@@ -320,9 +329,134 @@ namespace первая_задача_лол
             }
             Console.WriteLine();
             Console.WriteLine(c3str);
+            for (int i = 0; i < 7; i++)
+            {
+                Console.WriteLine();
+            }
+            Console.WriteLine("Калькулятор V1. Над калькулятором работали:");
+                Console.WriteLine("Степан Немченко (https://github.com/BadLog1n/)");
+                Console.WriteLine("Cофья Сохина (https://github.com/sssofi0101/)");
+                Console.WriteLine("На данный момент в калькуляторе доступны не все функции, но мы работаем над этим ;)");
+            Console.ReadKey();
         }
+        static void Vychitanie(int c1, int c2)
+        {
+            const string probel = " ";
+            string probel1 = " ";
+            string palochka = "_";
+            int c3 = 0;
 
 
+
+            bool proverka = false;
+            string c1str = Convert.ToString(c1), c2str = Convert.ToString(c2), c3str = Convert.ToString(c3);
+            if ((c1 < 0) && (c2 >= 0)) { c3 = -(Math.Abs(c1) + c2); }
+            if ((c1 > 0) && (c2 < 0)) { c3 = -(c1 + Math.Abs(c2)); }
+            if (c1 >= 0)
+            {
+                if (c2 > c1) { c3 = -(c2 - c1); }
+                else { c3 = c1 - c2; }
+            }
+            int CountC1 = 0; int CountC2 = 0; int CountC3 = 0;
+            if (c1 < 0) { CountC1 = (int)Math.Log10(Math.Abs(c1)) + 2; } else { if (c1 == 0) { CountC1 = 1; } else { CountC1 = (int)Math.Log10(Math.Abs(c1)) + 1; } }
+            if (c2 < 0) { CountC2 = (int)Math.Log10(Math.Abs(c2)) + 2; } else { if (c2 == 0) { CountC2 = 1; } else { CountC2 = (int)Math.Log10(Math.Abs(c2)) + 1; } }
+            if (c3 < 0) { CountC3 = (int)Math.Log10(Math.Abs(c3)) + 2; } else { if (c3 == 0) { CountC3 = 1; } else { CountC3 = (int)Math.Log10(Math.Abs(c3)) + 1; } }
+            if ((CountC3 > CountC1) && (CountC3 > CountC2))
+            {
+                proverka = true;
+
+            }
+            string pr = " ";
+            if (CountC2 == CountC1)
+            {
+                c1str = probel + c1;
+                c2str = probel + c2;
+                if (CountC3 == CountC1) { pr = probel; }
+                if (CountC3 < CountC1)
+                {
+                    while (CountC1 > CountC3)
+                    {
+                        pr += probel;
+                        CountC1--;
+                    }
+                }
+            }
+            else if (CountC2 > CountC1)
+            {
+
+                while (CountC2 > CountC1)
+                {
+                    probel1 += probel;
+                    CountC2--;
+                }
+
+                c1str = probel1 + c1;
+                c2str = probel + c2;
+                if (CountC3 == CountC2) { pr = probel; }
+                if (CountC3 == CountC1) { pr = probel1; }
+                if ((CountC3 < CountC1) && (CountC3 < CountC2)) { pr = probel1 + probel; }
+
+
+            }
+            else if (CountC1 > CountC2)
+            {
+                while (CountC1 > CountC2)
+                {
+                    probel1 += probel;
+
+                    CountC1--;
+                }
+                c1str = probel + c1;
+                c2str = probel1 + c2;
+                if (CountC3 == CountC2) { pr = probel1; }
+                if (CountC3 == CountC1) { pr = probel; }
+                if ((CountC3 < CountC1) && (CountC3 < CountC2)) { pr = probel1 + probel; }
+            }
+
+            Console.Clear();
+            Console.Write(c1str);
+            Console.WriteLine();
+            Console.Write("-");
+            Console.WriteLine();
+            Console.Write(c2str);
+            Console.WriteLine();
+
+            if (proverka == false)
+            {
+                if (c3 < 0) { Console.Write(probel); } else { Console.Write(pr); };
+
+            }
+
+            for (int i = 0; i < CountC3; i++)
+            {
+                Console.Write(palochka);
+            }
+            Console.WriteLine();
+            if (proverka == true)
+            {
+
+                Console.WriteLine(c3);
+            }
+            else
+            {
+
+                if (c3 < 0) { Console.Write(probel); } else { { Console.Write(pr); } }
+                Console.WriteLine(c3);
+
+            }
+
+
+           
+            for (int i = 0; i < 7; i++)
+            {
+                Console.WriteLine();
+            }
+            Console.WriteLine("Калькулятор V1. Над калькулятором работали:");
+                Console.WriteLine("Степан Немченко (https://github.com/BadLog1n/)");
+                Console.WriteLine("Cофья Сохина (https://github.com/sssofi0101/)");
+                Console.WriteLine("На данный момент в калькуляторе доступны не все функции, но мы работаем над этим ;)");
+            Console.ReadKey();
+        }
     }
 
 }
