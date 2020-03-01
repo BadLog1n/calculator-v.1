@@ -1,0 +1,11 @@
+C:\Users\badlogin\source\repos\Calculator1\Calculator1\bin\Debug\netcoreapp2.2\Calculator1.deps.json
+C:\Users\badlogin\source\repos\Calculator1\Calculator1\bin\Debug\netcoreapp2.2\Calculator1.runtimeconfig.json
+C:\Users\badlogin\source\repos\Calculator1\Calculator1\bin\Debug\netcoreapp2.2\Calculator1.runtimeconfig.dev.json
+C:\Users\badlogin\source\repos\Calculator1\Calculator1\bin\Debug\netcoreapp2.2\Calculator1.dll
+C:\Users\badlogin\source\repos\Calculator1\Calculator1\bin\Debug\netcoreapp2.2\Calculator1.pdb
+C:\Users\badlogin\source\repos\Calculator1\Calculator1\obj\Debug\netcoreapp2.2\Calculator1.csprojAssemblyReference.cache
+C:\Users\badlogin\source\repos\Calculator1\Calculator1\obj\Debug\netcoreapp2.2\Calculator1.csproj.CoreCompileInputs.cache
+C:\Users\badlogin\source\repos\Calculator1\Calculator1\obj\Debug\netcoreapp2.2\Calculator1.AssemblyInfoInputs.cache
+C:\Users\badlogin\source\repos\Calculator1\Calculator1\obj\Debug\netcoreapp2.2\Calculator1.AssemblyInfo.cs
+C:\Users\badlogin\source\repos\Calculator1\Calculator1\obj\Debug\netcoreapp2.2\Calculator1.dll
+C:\Users\badlogin\source\repos\Calculator1\Calculator1\obj\Debug\netcoreapp2.2\Calculator1.pdb
